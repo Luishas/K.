@@ -16,10 +16,25 @@ function sayNo() {
 
   noCount++;
 
-  yesScale += 0.15;
-  yesBtn.style.transform = `scale(${yesScale})`;
+  yesScale += 1.25;
+  if (yesScale > 2) {
+    yesBtn.style.position = "fixed";
+    yesBtn.style.top = "50%";
+    yesBtn.style.left = "50%";
+    yesBtn.style.zIndex = "999";
+    yesBtn.style.transform = `translate(-50%, -50%) scale(${yesScale})`;
+  } else {
+    yesBtn.style.transform = `scale(${yesScale})`;
+  }
+  if (yesScale > 6) {
+  yesBtn.innerText = "Okay okay 😌💗";
+}
 
-  noBtn.style.transform = `scale(${Math.max(0.4, 1 - noCount * 0.05)})`;
+
+  noBtn.style.transform = `
+    translateX(${noCount * 20}px)
+    scale(${1 - noCount * 0.06})
+  `;
 
   if (noCount === 5) {
     noBtn.innerText = "Are you sure? 😅";

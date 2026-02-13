@@ -68,6 +68,8 @@ button {
   border-radius: 999px;
   background: #cdb4db;
   color: #3c096c;
+  position: relative;
+  z-index: 1;
 }
 
 button:hover {
@@ -167,8 +169,9 @@ html, body {
 }
 
 #yesBtn {
+  z-index: 2;
   transition: transform 0.3s ease;
-  z-index: 5;
+  max-width: none;
 }
 
 #noBtn {
@@ -183,3 +186,10 @@ html, body {
   100% { transform: rotate(0deg); }
 }
 
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 24px;          /* 👈 separación REAL */
+  margin-top: 30px;
+  position: relative;
+}
