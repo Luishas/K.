@@ -50,15 +50,16 @@ yesBtn.style.fontSize = "clamp(1.3rem, 5vw, 2.2rem)";
 // yesBtn.innerText =
 //   "Rompiste el tiempo, la realidad y el espacio.\n\nAhora solo te queda aceptar,\no todo acabará 🐺";
   yesBtn.innerHTML = `
-  <span style="
-    max-width: 50vw;
-    display: block;
-    text-align: center;
-  ">
-    Rompiste el tiempo, la realidad y el espacio.<br><br>
-    Ahora solo te queda aceptar,<br>
-    o todo acabará 🐺
-  </span>
+  <div class="final-content">
+    <img src="images/happycat.jpg" alt="cute cat" />
+    <div>
+      Te lo dije, no las elijas.
+      Rompiste el tiempo, la realidad y el espacio.<br><br>
+      Ahora solo te queda aceptar,<br>
+      o todo acabará 
+    </div>
+    <img src="images/catdespair.jpg" alt="cute cat" />
+  </div>
 `;
   }
 
@@ -76,15 +77,7 @@ noBtn.style.transform = `
 }
 
 function sayYes() {
-  const response = document.getElementById("response");
-  if (!response) return;
-
-  response.innerText =
-    "Yay! Best decision of today 💕 Ice cream approved.";
-
-  for (let i = 0; i < 20; i++) {
-    createHeart();
-  }
+  goToSlide(4);
 }
 
 function createHeart() {
