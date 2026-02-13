@@ -9,42 +9,67 @@ let noCount = 0;
 let yesScale = 1;
 
 function sayNo() {
+  noCount++;
+
   const yesBtn = document.getElementById("yesBtn");
   const noBtn = document.getElementById("noBtn");
 
-  if (!yesBtn || !noBtn) return;
-
-  noCount++;
-
-  yesScale += 1.25;
-  if (yesScale > 2) {
-    yesBtn.style.position = "fixed";
-    yesBtn.style.top = "50%";
-    yesBtn.style.left = "50%";
-    yesBtn.style.zIndex = "999";
-    yesBtn.style.transform = `translate(-50%, -50%) scale(${yesScale})`;
-  } else {
-    yesBtn.style.transform = `scale(${yesScale})`;
+  // fase 1: crece normal
+  if (noCount < 7) {
+    yesBtn.style.transform = `scale(${1 + noCount * 0.55})`;
   }
-  if (yesScale > 6) {
-  yesBtn.innerText = "Okay okay 😌💗";
-}
+  // fase 2: se convierte en pantalla
+  else {
+yesBtn.style.position = "fixed";
+yesBtn.style.top = "0";
+yesBtn.style.left = "0";
+yesBtn.style.width = "100vw";
+yesBtn.style.height = "100vh";
+yesBtn.style.borderRadius = "0";
+yesBtn.style.zIndex = "9999";
 
+yesBtn.style.display = "flex";
+yesBtn.style.alignItems = "center";
+yesBtn.style.justifyContent = "center";
 
+yesBtn.style.boxSizing = "border-box";
+yesBtn.style.padding = "24px";
+
+yesBtn.style.maxWidth = "100vw";
+yesBtn.style.maxHeight = "100vh";
+yesBtn.style.overflow = "hidden";
+
+yesBtn.style.whiteSpace = "normal";
+yesBtn.style.wordBreak = "break-word";
+yesBtn.style.textAlign = "center";
+yesBtn.style.lineHeight = "1.3";
+
+yesBtn.style.fontSize = "clamp(1.3rem, 5vw, 2.2rem)";
+
+// yesBtn.innerText =
+//   "Rompiste el tiempo, la realidad y el espacio.\n\nAhora solo te queda aceptar,\no todo acabará 🐺";
+  yesBtn.innerHTML = `
+  <span style="
+    max-width: 90vw;
+    display: block;
+    text-align: center;
+  ">
+    Rompiste el tiempo, la realidad y el espacio.<br><br>
+    Ahora solo te queda aceptar,<br>
+    o todo acabará 🐺
+  </span>
+`;
+  }
+
+  // el botón no huye
   noBtn.style.transform = `
-    translateX(${noCount * 20}px)
-    scale(${1 - noCount * 0.06})
+    translateX(${noCount * 50}px)
+    scale(${1 - noCount * 0.08})
   `;
 
-  if (noCount === 5) {
-    noBtn.innerText = "Are you sure? 😅";
-  }
-
-  if (noCount >= 10) {
+  if (noCount >= 8) {
     noBtn.style.opacity = "0";
-    setTimeout(() => {
-      noBtn.style.display = "none";
-    }, 200);
+    setTimeout(() => noBtn.remove(), 300);
   }
 }
 
