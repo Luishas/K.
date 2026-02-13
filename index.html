@@ -6,125 +6,52 @@
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
 
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      background: linear-gradient(135deg, #fde2e4, #e0c3fc);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .card {
-      background: #fff1e6;
-      padding: 40px;
-      border-radius: 24px;
-      width: 360px;
-      text-align: center;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-      animation: floatIn 1s ease;
-    }
-
-    h1 {
-      color: #5e548e;
-      margin-bottom: 10px;
-      font-weight: 600;
-    }
-
-    p {
-      color: #6d6875;
-      font-size: 15px;
-      margin: 12px 0;
-    }
-
-    .buttons {
-      margin-top: 25px;
-    }
-
-    button {
-      background: #cdb4db;
-      border: none;
-      border-radius: 999px;
-      padding: 12px 22px;
-      font-size: 14px;
-      margin: 8px;
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      color: #3c096c;
-    }
-
-    button:hover {
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-    }
-
-    #response {
-      margin-top: 20px;
-      font-weight: 500;
-      color: #5e548e;
-      min-height: 24px;
-    }
-
-    .heart {
-      position: fixed;
-      bottom: -20px;
-      font-size: 18px;
-      animation: floatUp 4s linear forwards;
-      opacity: 0.8;
-    }
-
-    @keyframes floatUp {
-      from {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-      }
-      to {
-        transform: translateY(-100vh) scale(1.5);
-        opacity: 0;
-      }
-    }
-
-    @keyframes floatIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  </style>
 </head>
+
 <body>
-
   <div class="card">
-    <h1>Buenas tardes dias noches🌸</h1>
+  <div class="viewport">
+    <div class="slides">
 
-    <p>
-      I made this tiny webpage just to ask you something.
-    </p>
+      <!-- SLIDE 1 -->
+      <section class="slide">
+        <h1>Hey you 🌸</h1>
+        <p>I made this tiny webpage just for you.</p>
+        <button onclick="goToSlide(1)">Next 💫</button>
+      </section>
 
-    <p>
-      It took more effort than choosing an ice cream flavor.
-      And that’s saying something.
-    </p>
+      <!-- SLIDE 2 -->
+      <section class="slide">
+        <h1>Small confession 🤍</h1>
+        <p>
+          It took more effort than choosing an ice cream flavor.
+          And that’s saying something.
+        </p>
+        <button onclick="goToSlide(2)">Next 🍦</button>
+      </section>
 
-    <p>
-      This Valentine’s Day (Feb 14) 🍓<br>
-      would you like to go get ice cream with me?
-    </p>
+      <!-- SLIDE 3 -->
+      <section class="slide">
+        <h1>So… 💌</h1>
+        <p>
+          This Valentine’s Day (Feb 14) 🍓<br>
+          would you like to go get ice cream with me?
+        </p>
 
-    <div class="buttons">
-      <button onclick="sayYes()">Yes, let’s go 🍦</button>
-      <button onclick="sayMaybe()">Tell me when 😌</button>
+        <div class="buttons">
+          <button onclick="sayYes()">Yes, let’s go 🍦</button>
+          <button onclick="sayMaybe()">Tell me when 😌</button>
+        </div>
+
+        <div id="response"></div>
+      </section>
+
     </div>
-
-    <div id="response"></div>
   </div>
+</div>
 
   <script>
     function sayYes() {
@@ -154,6 +81,13 @@
       }, 5000);
     }
   </script>
+
+  <script>
+  function goToSlide(index) {
+    const slides = document.querySelector(".slides");
+    slides.style.transform = `translateX(-${index * 100}%)`;
+  }
+</script>
 
 </body>
 </html>
