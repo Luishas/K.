@@ -169,7 +169,6 @@ html, body {
 }
 
 #yesBtn {
-  z-index: 2;
   transition: all 0.4s ease;
   padding: 14px 28px;
   max-width: none;
@@ -177,7 +176,6 @@ html, body {
 
 #noBtn {
   transition: transform 0.3s ease, opacity 0.3s ease;
-  position: relative;
 }
 
 

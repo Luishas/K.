@@ -21,10 +21,11 @@ function sayNo() {
   // fase 2: se convierte en pantalla
   else {
 yesBtn.style.position = "fixed";
-yesBtn.style.top = "0";
-yesBtn.style.left = "0";
-yesBtn.style.width = "100vw";
-yesBtn.style.height = "100vh";
+yesBtn.style.top = "50%";
+yesBtn.style.left = "50%";
+yesBtn.style.transform = "translate(-50%, -50%)";
+yesBtn.style.width = "80vw";
+yesBtn.style.height = "80vh";
 yesBtn.style.borderRadius = "0";
 yesBtn.style.zIndex = "9999";
 
@@ -35,8 +36,8 @@ yesBtn.style.justifyContent = "center";
 yesBtn.style.boxSizing = "border-box";
 yesBtn.style.padding = "24px";
 
-yesBtn.style.maxWidth = "100vw";
-yesBtn.style.maxHeight = "100vh";
+yesBtn.style.maxWidth = "80vw";
+yesBtn.style.maxHeight = "80vh";
 yesBtn.style.overflow = "hidden";
 
 yesBtn.style.whiteSpace = "normal";
@@ -50,7 +51,7 @@ yesBtn.style.fontSize = "clamp(1.3rem, 5vw, 2.2rem)";
 //   "Rompiste el tiempo, la realidad y el espacio.\n\nAhora solo te queda aceptar,\no todo acabará 🐺";
   yesBtn.innerHTML = `
   <span style="
-    max-width: 90vw;
+    max-width: 50vw;
     display: block;
     text-align: center;
   ">
@@ -61,11 +62,12 @@ yesBtn.style.fontSize = "clamp(1.3rem, 5vw, 2.2rem)";
 `;
   }
 
-  // el botón no huye
-  noBtn.style.transform = `
-    translateX(${noCount * 50}px)
-    scale(${1 - noCount * 0.08})
-  `;
+ const maxMove = Math.min(120, window.innerWidth / 4);
+
+noBtn.style.transform = `
+  translateY(${Math.min(noCount * 35, maxDown)}px)
+  scale(${1 - noCount * 0.08})
+`;
 
   if (noCount >= 8) {
     noBtn.style.opacity = "0";
