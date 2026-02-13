@@ -22,7 +22,7 @@ body {
 
 .slides {
   display: flex;
-  width: 300vw; /* 3 slides */
+  width: 400vw; /* 3 slides */
   height: 100vh;
   transition: transform 0.8s ease;
 }
@@ -59,4 +59,16 @@ button {
 .floating {
   position: absolute;
   width: 180px;
+}
+
+.intro {
+  background: linear-gradient(135deg, #fde2e4, #e0c3fc);
+}
+
+.intro h1 {
+  font-size: 4.5rem;
+}
+
+.intro button {
+  font-size: 1.6rem;
 }
