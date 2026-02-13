@@ -59,8 +59,8 @@
       </p>
 
       <div class="buttons">
-        <button onclick="sayYes()">Yes, let’s go 🍦</button>
-        <button onclick="sayMaybe()">Tell me when 😌</button>
+        <button id="yesBtn" type="button" onclick="sayYes()">Yes, let’s go 🍦</button>
+        <button id="noBtn" type="button" onclick="sayNo()">No 😌</button>
       </div>
 
       <div id="response"></div>
@@ -68,22 +68,8 @@
 
   </div>
 
-  <script>
-    function goToSlide(index) {
-      document.querySelector(".slides").style.transform =
-        `translateX(-${index * 100}vw)`;
-    }
+</script>
 
-    function sayYes() {
-      document.getElementById("response").innerText =
-        "Yay! Best decision of today 💕";
-    }
-
-    function sayMaybe() {
-      document.getElementById("response").innerText =
-        "Fair enough 😌 Ice cream patiently waiting.";
-    }
-  </script>
   <audio id="bg-music" loop>
     <source src="music\plant_sitting.mp3" type="audio/mpeg">
   </audio>
@@ -104,5 +90,6 @@
 </script>
 
 </script>
+<script src="script.js"></script>
 </body>
 </html>
