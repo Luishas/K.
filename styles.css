@@ -104,3 +104,9 @@ small {
   animation: fadeIn 1.2s ease 0.3s forwards;
   opacity: 0;
 }
+
+.cute-img {
+  width: 220px;   /* prueba 180–300 */
+  height: auto;
+}
+
