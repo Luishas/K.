@@ -17,7 +17,7 @@
     <section class="slide">
 
         <img src="images\cato.gif" class="decor top-left">
-        <img src="images\pengu.gif" class="decor bottom-right">
+        <!-- <img src="images\pengu.gif" class="decor bottom-right"> -->
 
       <h1>Hellou buenas noches tardes dias 🌸</h1>
       <p>It's better to do something than just say it</p>
@@ -26,7 +26,7 @@
 
     <!-- SLIDE 2 -->
     <section class="slide">
-      <h1>Small confession 🤍</h1>
+      <h1>Just because it's you</h1>
       <p>
         This took more effort than choosing an ice cream flavor.
         And that’s saying something.
@@ -36,6 +36,8 @@
 
     <!-- SLIDE 3 -->
     <section class="slide">
+
+      <img src="images\pengu.gif" class="decor top-right">
       <h1>So… 💌</h1>
       <p>
         This Valentine’s Day (Feb 14)<br>
@@ -68,6 +70,22 @@
         "Fair enough 😌 Ice cream patiently waiting.";
     }
   </script>
+  <audio id="bg-music" loop>
+    <source src="music\plant_sitting.mp3" type="audio/mpeg">
+  </audio>
 
+  <script>
+    const music = document.getElementById("bg-music");
+
+    function goToSlide(index) {
+      if (music.paused) {
+        music.volume = 0.4;
+        music.play();
+      }
+
+      const slides = document.querySelector(".slides");
+      slides.style.transform = `translateX(-${index * 100}vw)`;
+    }
+</script>
 </body>
 </html>
