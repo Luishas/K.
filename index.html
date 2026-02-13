@@ -1,94 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>A Tiny Valentine</title>
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  
   <link rel="stylesheet" href="styles.css">
-
 </head>
 
 <body>
-  <div class="card">
-  <div class="viewport">
-    <div class="slides">
 
-      <!-- SLIDE 1 -->
-      <section class="slide">
-        <h1>Hey you 🌸</h1>
-        <p>I made this tiny webpage just for you.</p>
-        <button onclick="goToSlide(1)">Next 💫</button>
-      </section>
+  <div class="slides">
 
-      <!-- SLIDE 2 -->
-      <section class="slide">
-        <h1>Small confession 🤍</h1>
-        <p>
-          It took more effort than choosing an ice cream flavor.
-          And that’s saying something.
-        </p>
-        <button onclick="goToSlide(2)">Next 🍦</button>
-      </section>
+    <!-- SLIDE 1 -->
+    <section class="slide">
+      <h1>Hey you 🌸</h1>
+      <p>I made this just for you.</p>
+      <button onclick="goToSlide(1)">Next 💫</button>
+    </section>
 
-      <!-- SLIDE 3 -->
-      <section class="slide">
-        <h1>So… 💌</h1>
-        <p>
-          This Valentine’s Day (Feb 14) 🍓<br>
-          would you like to go get ice cream with me?
-        </p>
+    <!-- SLIDE 2 -->
+    <section class="slide">
+      <h1>Small confession 🤍</h1>
+      <p>
+        This took more effort than choosing an ice cream flavor.
+        And that’s saying something.
+      </p>
+      <button onclick="goToSlide(2)">Next 🍦</button>
+    </section>
 
-        <div class="buttons">
-          <button onclick="sayYes()">Yes, let’s go 🍦</button>
-          <button onclick="sayMaybe()">Tell me when 😌</button>
-        </div>
+    <!-- SLIDE 3 -->
+    <section class="slide">
+      <h1>So… 💌</h1>
+      <p>
+        This Valentine’s Day (Feb 14)<br>
+        would you like to go get ice cream with me?
+      </p>
 
-        <div id="response"></div>
-      </section>
+      <div class="buttons">
+        <button onclick="sayYes()">Yes, let’s go 🍦</button>
+        <button onclick="sayMaybe()">Tell me when 😌</button>
+      </div>
 
-    </div>
+      <div id="response"></div>
+    </section>
+
   </div>
-</div>
 
   <script>
+    function goToSlide(index) {
+      document.querySelector(".slides").style.transform =
+        `translateX(-${index * 100}vw)`;
+    }
+
     function sayYes() {
       document.getElementById("response").innerText =
-        "Yay! Best decision of today 💕 Ice cream approved.";
-
-      for (let i = 0; i < 20; i++) {
-        createHeart();
-      }
+        "Yay! Best decision of today 💕";
     }
 
     function sayMaybe() {
       document.getElementById("response").innerText =
         "Fair enough 😌 Ice cream patiently waiting.";
     }
-
-    function createHeart() {
-      const heart = document.createElement("div");
-      heart.classList.add("heart");
-      heart.innerText = "💗";
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.animationDuration = (3 + Math.random() * 2) + "s";
-      document.body.appendChild(heart);
-
-      setTimeout(() => {
-        heart.remove();
-      }, 5000);
-    }
   </script>
-
-  <script>
-  function goToSlide(index) {
-    const slides = document.querySelector(".slides");
-    slides.style.transform = `translateX(-${index * 100}%)`;
-  }
-</script>
 
 </body>
 </html>
