@@ -42,7 +42,7 @@ body {
   gap: 20px;
   padding: 40px;
   text-align: center;
-
+  position: relative;
   backdrop-filter: blur(6px);
 }
 
@@ -106,7 +106,10 @@ small {
 }
 
 .cute-img {
-  width: 220px;   /* prueba 180–300 */
-  height: auto;
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
 }
 
