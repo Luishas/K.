@@ -9,6 +9,9 @@ html, body {
   height: 100%;
   font-family: 'Poppins', sans-serif;
 }
+body {
+  background: linear-gradient(135deg, #fde2e4, #e0c3fc);
+}
 
 body {
   overflow: hidden;
@@ -24,7 +27,7 @@ body {
   display: flex;
   width: 400vw; /* 3 slides */
   height: 100vh;
-  transition: transform 0.8s ease;
+  transition: transform 0.9s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 .slide {
@@ -39,21 +42,31 @@ body {
   gap: 20px;
   padding: 40px;
   text-align: center;
+
+  backdrop-filter: blur(6px);
 }
 
 h1 {
   font-size: 4rem;
+  color: #5e548e;
 }
 
 p {
   font-size: 1.8rem;
   max-width: 700px;
+  color: #6d6875;
 }
 
 button {
   font-size: 1.4rem;
   padding: 16px 36px;
   border-radius: 999px;
+  background: #cdb4db;
+  color: #3c096c;
+}
+
+button:hover {
+  background: #b5838d;
 }
 
 .floating {
@@ -71,4 +84,16 @@ button {
 
 .intro button {
   font-size: 1.6rem;
+}
+
+.slide:nth-child(1) {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.slide:nth-child(2) {
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.slide:nth-child(3) {
+  background: rgba(255, 255, 255, 0.08);
 }
