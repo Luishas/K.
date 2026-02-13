@@ -1,12 +1,12 @@
 /* RESET BÁSICO */
 body {
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
   background: linear-gradient(135deg, #fde2e4, #e0c3fc);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-family: 'Poppins', sans-serif;
+
+  display: flex;
+  justify-content: center;
 }
 
 /* CARD */
