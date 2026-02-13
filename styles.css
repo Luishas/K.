@@ -17,6 +17,11 @@ body {
   overflow: hidden;
 }
 
+img {
+  max-width: 80vw;
+  height: auto;
+}
+
 .viewport {
   width: 100vw;
   height: 100vh;
@@ -111,3 +116,34 @@ small {
   width: 180px;
 }
 
+@media (max-width: 768px) {
+
+  h1 {
+     font-size: clamp(2rem, 6vw, 4rem);
+  }
+
+  p {
+    font-size: clamp(1rem, 3.5vw, 1.6rem);
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  button {
+    font-size: 1.1rem;
+    padding: 14px 28px;
+  }
+
+}
+
+.decor {
+  width: 120px;
+}
+
+@media (max-width: 768px) {
+  .decor {
+    width: 80px;
+    opacity: 0.7;
+  }
+}
